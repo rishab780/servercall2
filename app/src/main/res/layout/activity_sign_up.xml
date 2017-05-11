@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_signup"
+        style="@style/button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/marginbottom"
+        android:background="@color/colorPrimary"
+        android:text="@string/signup"
+        android:textColor="@color/white"
+        />
+    <CheckBox
+        android:id="@+id/tos"
+        style="@style/wrapcontent"
+        android:layout_above="@id/btn_signup"
+        android:layout_marginBottom="@dimen/marginbottom"
+        android:button="@drawable/checkbox"
+        android:paddingLeft="@dimen/defaultDrawablePadding"
+        android:text="@string/tac"
+        android:textSize="@dimen/ts_small"
+        android:layout_marginLeft="@dimen/etMargin"
+
+        />
+    <EditText
+        android:id="@+id/et_cpassword"
+        style="@style/et_style"
+        android:layout_above="@id/tos"
+        android:drawableLeft="@drawable/icon_password"
+        android:hint="@string/cpassword"/>
+    <EditText
+        android:id="@+id/et_password"
+        style="@style/et_style"
+        android:layout_above="@id/et_cpassword"
+        android:drawableLeft="@drawable/icon_password"
+        android:hint="@string/pass"/>
+    <EditText
+        android:id="@+id/et_DOB"
+        style="@style/et_style"
+        android:layout_above="@id/et_password"
+        android:drawableLeft="@drawable/icon_email"
+        android:hint="Date of Birth"/>
+    <EditText
+        android:id="@+id/et_email"
+        style="@style/et_style"
+        android:layout_above="@id/et_DOB"
+        android:drawableLeft="@drawable/icon_email"
+        android:hint="@string/email"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rb_gender"
+        android:layout_marginStart="@dimen/etMargin"
+        android:layout_marginEnd="@dimen/etMargin"
+        android:layout_above="@id/et_email"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_tiny"
+                android:paddingTop="@dimen/spacing_small"
+                android:text="Gender"/>
+
+            <RadioGroup
+                android:id="@+id/rgGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rbMale"
+                    android:layout_height="wrap_content"
+                    android:text="male"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rbFemale"
+                    android:layout_height="wrap_content"
+                    android:text="female"/>
+            </RadioGroup>
+        </LinearLayout>
+
+
+    </RadioGroup>
+    <EditText
+        android:id="@+id/et_contact"
+        style="@style/et_style"
+        android:layout_above="@id/rb_gender"
+        android:drawableLeft="@drawable/icon_contact"
+        android:hint="@string/contact"/>
+    <EditText
+        android:id="@+id/et_fname"
+        style="@style/et_style"
+        android:layout_above="@id/et_contact"
+        android:drawableLeft="@drawable/icon_contact"
+        android:drawablePadding="@dimen/defaultDrawablePadding"
+        android:layout_marginLeft="@dimen/etMargin"
+        android:hint="@string/fname"/>
+    <ImageView
+        style="@style/wrapcontent"
+        android:layout_above="@+id/et_fname"
+        android:layout_marginBottom="@dimen/etMargin"
+        android:id="@+id/display"
+
+        android:src="@drawable/user_placeholder"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_medium"
+        tools:context="com.skeleton.activity.DisplayResponseActivity">
+
+        <TextView
+            android:id="@+id/tvAccess"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvFirstName"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvLastName"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvId"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvCreatedAt"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvUpdatedAt"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvDob"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvCountryCode"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvPhone"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvUserImage"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvGender"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvAbout"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvDrinking"
+            style="@style/tvDisplay"/>
+
+        <TextView
+            android:id="@+id/tvLanguage"
+            style="@style/tvDisplay"/>
+
+
+    </LinearLayout>
+</ScrollView>
