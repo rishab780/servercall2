@@ -44,7 +44,7 @@ import okhttp3.RequestBody;
 public class SignUpActivity extends AppCompatActivity {
 
     private ImageView ivImage;
-    private EditText tvName, tvContactNo, tvEmail, tvDOB, tvPassword, tvCpassword;
+    private EditText etName, etContactNo, etEmail, etDOB, etPassword, etCpassword;
     private CheckBox cbTOS;
     private Button btnSignUp;
     private ImageChooser imageChooser;
@@ -52,7 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
     private int checkedId;
     private RadioGroup rgGender;
     private int mGender;
-    private String mOrientation = "Gay";
+    private String mOrientation = "Straight";
     private Date date;
 
     @Override
@@ -89,23 +89,23 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(final View v) {
                 checkedId = rgGender.getCheckedRadioButtonId();
                 checkGender();
-                if (ValidateEditText.checkName(tvName, true)
-                        && ValidateEditText.checkEmail(tvEmail)
-                        && ValidateEditText.checkPassword(tvPassword, false)
-                        && ValidateEditText.checkPassword(tvCpassword, true)
-                        && ValidateEditText.comparePassword(tvPassword, tvCpassword)
-                        && ValidateEditText.checkPhoneNumber(tvContactNo)
-                        && (checkDOB(tvDOB))) {
+                if (ValidateEditText.checkName(etName, true)
+                        && ValidateEditText.checkEmail(etEmail)
+                        && ValidateEditText.checkPassword(etPassword, false)
+                        && ValidateEditText.checkPassword(etCpassword, true)
+                        && ValidateEditText.comparePassword(etPassword, etCpassword)
+                        && ValidateEditText.checkPhoneNumber(etContactNo)
+                        && (checkDOB(etDOB))) {
 
                     Log.d("debug", "all valide");
                     HashMap<String, RequestBody> multipartParams = new MultipartParams.Builder()
-                            .add(AppConstant.KEY_FRAGMENT_FNAME, tvName.getText().toString())
-                            .add(AppConstant.KEY_FRAGMENT_LNAME, tvName.getText().toString())
-                            .add(AppConstant.KEY_FRAGMENT_DOB, tvDOB.getText().toString())
+                            .add(AppConstant.KEY_FRAGMENT_FNAME, etName.getText().toString())
+                            .add(AppConstant.KEY_FRAGMENT_LNAME, etName.getText().toString())
+                            .add(AppConstant.KEY_FRAGMENT_DOB, etDOB.getText().toString())
                             .add(AppConstant.KEY_FRAGMENT_COUNTRY_CODE, AppConstant.VALUE_PHONE)
-                            .add(AppConstant.KEY_FRAGMENT_PHONE, tvContactNo.getText().toString())
-                            .add(AppConstant.KEY_FRAGMENT_EMAIL, tvEmail.getText().toString())
-                            .add(AppConstant.KEY_FRAGMENT_PASSWORD, tvPassword.getText().toString())
+                            .add(AppConstant.KEY_FRAGMENT_PHONE, etContactNo.getText().toString())
+                            .add(AppConstant.KEY_FRAGMENT_EMAIL, etEmail.getText().toString())
+                            .add(AppConstant.KEY_FRAGMENT_PASSWORD, etPassword.getText().toString())
                             .add(AppConstant.KEY_FRAGMENT_LANGUAGE, AppConstant.VALUE_FRAGMENT_LANGUAGE)
                             .add(AppConstant.KEY_FRAGMENT_DEVICE_TYPE, AppConstant.VALUE_FRAGMENT_DEVICE_TYPE)
                             .add(AppConstant.KEY_FRAGMENT_DEVICE_TOKEN, AppConstant.VALUE_RAGMENT_DEVICE_TOKEN)
@@ -124,8 +124,8 @@ public class SignUpActivity extends AppCompatActivity {
 
                                     if ("200".equals(response.getStatusCode().toString())) {
 
-                                        clearEditText(tvName, tvDOB, tvCpassword,
-                                                tvEmail, tvPassword, tvContactNo);
+                                        clearEditText(etName, etDOB, etCpassword,
+                                                etEmail, etPassword, etContactNo);
                                         Intent intent = new Intent(SignUpActivity.this, DisplayResponseActivity.class);
                                         intent.putExtra("response", response);
                                         startActivity(intent);
@@ -166,12 +166,12 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void init() {
         ivImage = (ImageView) findViewById(R.id.display);
-        tvName = (EditText) findViewById(R.id.et_fname);
-        tvContactNo = (EditText) findViewById(R.id.et_contact);
-        tvEmail = (EditText) findViewById(R.id.et_email);
-        tvDOB = (EditText) findViewById(R.id.et_DOB);
-        tvPassword = (EditText) findViewById(R.id.et_password);
-        tvCpassword = (EditText) findViewById(R.id.et_cpassword);
+        etName = (EditText) findViewById(R.id.et_fname);
+        etContactNo = (EditText) findViewById(R.id.et_contact);
+        etEmail = (EditText) findViewById(R.id.et_email);
+        etDOB = (EditText) findViewById(R.id.et_DOB);
+        etPassword = (EditText) findViewById(R.id.et_password);
+        etCpassword = (EditText) findViewById(R.id.et_cpassword);
         cbTOS = (CheckBox) findViewById(R.id.tos);
         btnSignUp = (Button) findViewById(R.id.btn_signup);
         rgGender = (RadioGroup) findViewById(R.id.rgGender);
